@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classroom Expectations Reflection</title>
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --accent-dark: #1d4ed8;
+      --border: #d1d5db;
+      --green: #16a34a;
+      --red: #dc2626;
+      --soft-blue: #eaf2ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      padding: 32px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 1rem;
+      opacity: 0.95;
+    }
+
+    main {
+      max-width: 950px;
+      margin: 24px auto;
+      padding: 0 16px 40px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #111827;
+      border-bottom: 2px solid var(--soft-blue);
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+    }
+
+    .instructions {
+      background: var(--soft-blue);
+      border-left: 5px solid var(--accent);
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 16px 0 6px;
+    }
+
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      resize: vertical;
+      background: #fff;
+    }
+
+    textarea:focus, input[type="text"]:focus {
+      outline: 2px solid #93c5fd;
+      border-color: var(--accent);
+    }
+
+    textarea {
+      min-height: 95px;
+    }
+
+    .small {
+      min-height: 65px;
+    }
+
+    .word-count {
+      margin-top: 4px;
+      font-size: 0.9rem;
+      color: var(--red);
+    }
+
+    .word-count.ok {
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    .expectation-box {
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 16px;
+    }
+
+    .expectation-title {
+      font-weight: bold;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f3f4f6;
+      text-align: left;
+    }
+
+    td textarea {
+      min-height: 80px;
+      border: none;
+      padding: 8px;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    button {
+      border: none;
+      background: var(--accent);
+      color: white;
+      padding: 11px 16px;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--accent-dark);
+    }
+
+    button.secondary {
+      background: #4b5563;
+    }
+
+    button.secondary:hover {
+      background: #374151;
+    }
+
+    .warning {
+      color: var(--red);
+      font-size: 0.9rem;
+      display: none;
+      margin-top: 4px;
+    }
+
+    .footer-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    @media print {
+      header, .toolbar, .footer-note {
+        display: none;
+      }
+
+      body {
+        background: white;
+      }
+
+      .card {
+        box-shadow: none;
+        border: 1px solid #999;
+        page-break-inside: avoid;
+      }
+
+      textarea, input[type="text"] {
+        border: 1px solid #999;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Classroom Expectations Reflection</h1>
+    <p>Complete this activity carefully using full sentences. Copying and pasting is not allowed.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Student Information</h2>
+      <label for="studentName">Student name</label>
+      <input type="text" id="studentName" placeholder="Type your full name here" />
+
+      <label for="className">Class</label>
+      <input type="text" id="className" placeholder="Type your class here" />
+
+      <label for="date">Date</label>
+      <input type="text" id="date" placeholder="Type today's date here" />
+    </section>
+
+    <section class="card">
+      <h2>Instructions</h2>
+      <div class="instructions">
+        This activity is not only about saying sorry. It is about understanding what went wrong, why expectations matter, and what better choices you can make next lesson.
+      </div>
+      <p>Use complete sentences. Try to be honest and specific. Short answers such as “I don’t know”, “nothing”, or “yes” are not enough.</p>
+    </section>
+
+    <section class="card">
+      <h2>Part 1: Understanding Classroom Expectations</h2>
+      <p>For each expectation, explain why it matters and what can happen when it is not followed. Minimum: 30 words per answer.</p>
+
+      <div id="expectations"></div>
+    </section>
+
+    <section class="card">
+      <h2>Part 2: Personal Reflection</h2>
+      <p>Answer each question honestly. Minimum: 40 words per answer.</p>
+
+      <label>1. Which classroom expectation is most difficult for you to follow? Why?</label>
+      <textarea data-min="40" placeholder="Type your answer here..."></textarea>
+      <div class="word-count">0 / 40 words</div>
+      <div class="warning">Pasting is not allowed. Please type your own answer.</div>
+
+      <label>2. How does your behaviour affect your learning, your classmates, and the teacher?</label>
+      <textarea data-min="40" placeholder="Type your answer here..."></textarea>
+      <div class="word-count">0 / 40 words</div>
+      <div class="warning">Pasting is not allowed. Please type your own answer.</div>
+
+      <label>3. Describe one recent moment where you could have made a better decision in class.</label>
+      <textarea data-min="40" placeholder="Type your answer here..."></textarea>
+      <div class="word-count">0 / 40 words</div>
+      <div class="warning">Pasting is not allowed. Please type your own answer.</div>
+
+      <label>4. What will you do differently next lesson?</label>
+      <textarea data-min="40" placeholder="Type your answer here..."></textarea>
+      <div class="word-count">0 / 40 words</div>
+      <div class="warning">Pasting is not allowed. Please type your own answer.</div>
+    </section>
+
+    <section class="card">
+      <h2>Part 3: Better Choices Plan</h2>
+      <p>Complete the table with realistic answers. Minimum: 20 words in each box.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Situation</th>
+            <th>What I usually do</th>
+            <th>Better choice next time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>The teacher gives instructions</td>
+            <td><textarea class="small" data-min="20"></textarea><div class="word-count">0 / 20 words</div><div class="warning">Pasting is not allowed.</div></td>
+            <td><textarea class="small" data-min="20"></textarea><div class="word-count">0 / 20 words</div><div class="warning">Pasting is not allowed.</div></td>
+          </tr>
+          <tr>
+            <td>I feel distracted or bored</td>
+            <td><textarea class="small" data-min="20"></textarea><div class="word-count">0 / 20 words</div><div class="warning">Pasting is not allowed.</div></td>
+            <td><textarea class="small" data-min="20"></textarea><div class="word-count">0 / 20 words</div><div class="warning">Pasting is not allowed.</div></td>
+          </tr>
+          <tr>
+            <td>I disagree with someone</td>
+            <td><textarea class="small" data-min="20"></textarea><div class="word-count">0 / 20 words</div><div class="warning">Pasting is not allowed.</div></td>
+            <td><textarea class="small" data-min="20"></textarea><div class="word-count">0 / 20 words</div><div class="warning">Pasting is not allowed.</div></td>
+          </tr>
+          <tr>
+            <td>I finish my work early</td>
+            <td><textarea class="small" data-min="20"></textarea><div class="word-count">0 / 20 words</div><div class="warning">Pasting is not allowed.</div></td>
+            <td><textarea class="small" data-min="20"></textarea><div class="word-count">0 / 20 words</div><div class="warning">Pasting is not allowed.</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Part 4: Commitment Statement</h2>
+      <p>Write one final paragraph explaining the kind of student you want to be and how you will contribute better to the class. Minimum: 80 words.</p>
+
+      <textarea data-min="80" placeholder="Type your final commitment statement here..."></textarea>
+      <div class="word-count">0 / 80 words</div>
+      <div class="warning">Pasting is not allowed. Please type your own answer.</div>
+
+      <div class="toolbar">
+        <button onclick="window.print()">Print / Save as PDF</button>
+        <button class="secondary" onclick="clearAll()">Clear all answers</button>
+      </div>
+    </section>
+
+    <p class="footer-note">This form blocks paste in answer boxes and uses word counters to encourage complete responses.</p>
+  </main>
+
+  <script>
+    const expectations = [
+      "Arrive quietly and ready to learn.",
+      "Listen when others are speaking.",
+      "Follow instructions the first time.",
+      "Respect classmates and personal space.",
+      "Stay focused on the assigned task.",
+      "Use devices only when permission is given.",
+      "Speak respectfully to teachers and classmates.",
+      "Contribute positively to the learning environment."
+    ];
+
+    const container = document.getElementById("expectations");
+
+    expectations.forEach((item, index) => {
+      const box = document.createElement("div");
+      box.className = "expectation-box";
+      box.innerHTML = `
+        <div class="expectation-title">${index + 1}. ${item}</div>
+        <label>Explain why this expectation is important and what can happen if it is not followed.</label>
+        <textarea data-min="30" placeholder="Type your answer here..."></textarea>
+        <div class="word-count">0 / 30 words</div>
+        <div class="warning">Pasting is not allowed. Please type your own answer.</div>
+      `;
+      container.appendChild(box);
+    });
+
+    function countWords(text) {
+      return text.trim().split(/\s+/).filter(Boolean).length;
+    }
+
+    function updateCounter(textarea) {
+      const min = Number(textarea.dataset.min || 0);
+      const words = countWords(textarea.value);
+      const counter = textarea.nextElementSibling;
+      if (counter && counter.classList.contains("word-count")) {
+        counter.textContent = `${words} / ${min} words`;
+        counter.classList.toggle("ok", words >= min);
+      }
+    }
+
+    function blockPaste(event) {
+      event.preventDefault();
+      const warning = event.target.parentElement.querySelector(".warning") || event.target.nextElementSibling?.nextElementSibling;
+      if (warning) {
+        warning.style.display = "block";
+        setTimeout(() => warning.style.display = "none", 2500);
+      }
+    }
+
+    function setupTextAreas() {
+      document.querySelectorAll("textarea").forEach(textarea => {
+        textarea.addEventListener("input", () => updateCounter(textarea));
+        textarea.addEventListener("paste", blockPaste);
+        textarea.addEventListener("drop", event => event.preventDefault());
+        textarea.addEventListener("contextmenu", event => event.preventDefault());
+      });
+    }
+
+    function clearAll() {
+      const confirmClear = confirm("Are you sure you want to clear all answers?");
+      if (!confirmClear) return;
+
+      document.querySelectorAll("textarea, input").forEach(field => {
+        field.value = "";
+        if (field.tagName.toLowerCase() === "textarea") {
+          updateCounter(field);
+        }
+      });
+    }
+
+    setupTextAreas();
+  </script>
+</body>
+</html>
